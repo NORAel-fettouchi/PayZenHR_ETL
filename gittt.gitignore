@@ -1,0 +1,19 @@
+# Environnement virtuel
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Variables d'environnement
+.env
+config/.ven
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
