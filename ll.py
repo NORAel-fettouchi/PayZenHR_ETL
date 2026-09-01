@@ -1,58 +1,33 @@
 from pyspark.sql import SparkSession
 
-# ==========================
-# Création de la session Spark
-# ==========================
 spark = (
     SparkSession.builder
-    .appName("PayZenHR_ETL")
+    .appName("TestClickHouse")
     .config(
         "spark.jars",
-        r"E:\etape_1\PayZenHR_ETL\jars\mssql-jdbc-13.4.0.jre8.jar"
+        r"E:\etape_1\PayZenHR_ETL\pipline_test\payzenhr_pyspark\jars\clickhouse-jdbc-0.9.8-all.jar"
     )
     .getOrCreate()
 )
 
-# ==========================
-# URL JDBC
-# ==========================
-url = (
-    "jdbc:sqlserver://localhost:1433;"
-    "databaseName=PayZenHR;"
-    "encrypt=false;"
-    "trustServerCertificate=true;"
-)
+url = "jdbc:clickhouse://localhost:8124/payzen"
 
-# ==========================
-# Informations de connexion
-# ==========================
 properties = {
-    "user": "nora",
-    "password": "nora",
-    "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    "driver": "com.clickhouse.jdbc.ClickHouseDriver",
+    "user": "default",
+    "password": "1234"
 }
 
-# ==========================
-# Lecture de la table Employees
-# ==========================
-try:
-    df = spark.read.jdbc(
-        url=url,
-        table="dbo.Employees",
-        properties=properties
-    )
+print("===== TEST CLICKHOUSE JDBC =====")
 
-    print("Connexion réussie !")
-    print(f"Nombre de lignes : {df.count()}")
+df = spark.read.jdbc(
+    url=url,
+    table="system.one",
+    properties=properties
+)
 
-    df.printSchema()
+df.show()
 
-    df.show(10, truncate=False)
-    
+print("Connexion JDBC OK")
 
-except Exception as e:
-    print("\nErreur pendant la connexion :")
-    print(e)
-
-finally:
-    spark.stop()
+spark.stop()

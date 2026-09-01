@@ -1,0 +1,43 @@
+# Virtual environments
+venv/
+venv311/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment / secrets
+.env
+.env.*
+config.local.py
+
+# Spark temporary files
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python test / cache
+.pytest_cache/
+.mypy_cache/
+
+# Large dependency files
+*.jar
+
+# Temporary files
+temp/
+tmp/
