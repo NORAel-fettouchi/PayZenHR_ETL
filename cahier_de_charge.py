@@ -190,7 +190,7 @@ CONFIG = {
 
         "port": os.environ.get(
             "SQLSERVER_PORT",
-            "1433"
+            ""
         ),
 
         "database": os.environ.get(
@@ -200,8 +200,9 @@ CONFIG = {
 
         "user": os.environ.get(
             "SQLSERVER_USER",
-            "sa"
+            ""
         ),
+        
 
         "password": os.environ.get(
             "SQLSERVER_PASSWORD",
@@ -222,7 +223,7 @@ CONFIG = {
 
         "port": os.environ.get(
             "CLICKHOUSE_PORT",
-            "8124"
+            ""
         ),
 
         "database": os.environ.get(

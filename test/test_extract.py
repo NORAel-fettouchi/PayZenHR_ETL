@@ -40,7 +40,7 @@ df = (
     .option("url", url)
     .option("dbtable", "dbo.Companies")
     .option("user", "sa")
-    .option("password", "noraNORA123")
+    .option("password", "")
     .option(
         "driver",
         "com.microsoft.sqlserver.jdbc.SQLServerDriver"

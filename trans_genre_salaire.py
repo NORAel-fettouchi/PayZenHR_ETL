@@ -31,7 +31,7 @@ jdbc_url = (
 
 properties = {
     "user": "sa",
-    "password": "noraNORA123",
+    "password": "",
     "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 }
 
@@ -223,7 +223,7 @@ clickhouse_url = (
 clickhouse_properties = {
     "driver": "com.clickhouse.jdbc.ClickHouseDriver",
     "user": "default",
-    "password": "1234"
+    "password": ""
 }
 # =====================================================
 # 9. EXPORT

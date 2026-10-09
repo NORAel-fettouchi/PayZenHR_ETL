@@ -19,7 +19,7 @@ SQLSERVER_JDBC_URL = (
 
 SQLSERVER_CONNECTION_PROPERTIES = {
     "user": "sa",
-    "password": "noraNORA123",
+    "password": "",
     "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 }
 

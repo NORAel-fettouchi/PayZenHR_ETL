@@ -81,7 +81,7 @@ sqlserver_url = (
 #   $env:PAYZENHR_SQL_PASSWORD = "votre_mot_de_passe"
 sqlserver_properties = {
     "user": "sa",
-    "password": os.environ["PAYZENHR_SQL_PASSWORD"],
+    "password": "",
     "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 }
 
